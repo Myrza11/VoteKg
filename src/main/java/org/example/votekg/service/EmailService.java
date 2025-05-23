@@ -28,7 +28,7 @@ public class EmailService {
 
     public void sendVerificationEmail(String to, String token){
         String subject = "Подтвердите свою почту";
-        String confirmationUrl = "http://localhost:8080/verify?token=" + token;
+        String confirmationUrl = "https://votekg-1.onrender.com/verify?token=" + token;
 
         String message = "Пожалуйста, подтвердите ваш email, перейдя по ссылке:\n" + confirmationUrl;
 
