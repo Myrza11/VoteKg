@@ -1,5 +1,6 @@
 package org.example.votekg.dto;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 import lombok.Data;
@@ -11,32 +12,21 @@ import java.util.Date;
 
 @Data
 public class OfficialUserRegisterDTO {
-    @NotBlank
     private String name;
-    @NotBlank
     private String surname;
-    @NotBlank
     private String email;
-    @NotBlank
     private String password;
-    @NotBlank
     private String idPassword;
 
-    @NotNull(message = "Image file must not be null")
     private MultipartFile userImage;
 
-    @NotNull(message = "Image file must not be null")
     private MultipartFile userPassportPhoto;
 
-    @NotNull(message = "Image file must not be null")
     private MultipartFile userUpsidePassportPhoto;
-    @NotBlank
     private String organization;
-    @NotBlank
     private String position;
-    @NotNull(message = "Image file must not be null")
     private MultipartFile certificate;
     private District district;
-    @NotBlank
+    @JsonFormat(pattern = "yyyy-MM-dd")
     private LocalDate dateOfBirth;
 }
