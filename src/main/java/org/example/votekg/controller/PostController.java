@@ -46,4 +46,9 @@ public class PostController {
         postService.dislikePost(postId, currentUser);
         return ResponseEntity.ok("");
     }
+
+    @PostMapping("/users-post")
+    public ResponseEntity<List<Post>> getPostsByUser(@AuthenticationPrincipal User currentUser) {
+        return ResponseEntity.ok(postService.getAllUserPosts(currentUser));
+    }
 }

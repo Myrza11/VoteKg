@@ -19,6 +19,11 @@ public class PostService {
     @Autowired
     private PostLIkeRepository postLIkeRepository;
 
+    public List<Post> getAllUserPosts(User user) {
+        return postRepository.findAllByUser(user);
+    }
+
+
     public void createPost(PostDTO postDTO, User currentUser) {
         Post post = new Post();
         post.setTitle(postDTO.getTitle());
