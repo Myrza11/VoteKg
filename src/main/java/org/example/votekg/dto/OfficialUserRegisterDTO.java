@@ -36,7 +36,6 @@ public class OfficialUserRegisterDTO {
     private String position;
     @NotNull(message = "Image file must not be null")
     private MultipartFile certificate;
-    @NotBlank
     private District district;
     @NotBlank
     private LocalDate dateOfBirth;
